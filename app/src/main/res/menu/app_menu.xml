@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home_icon_white"
+        android:title="@string/nav_home" />
+
+    <item
+        android:id="@+id/nav_categories"
+        android:icon="@drawable/categories_icon_white"
+        android:title="Categories" />
+
+    <item
+        android:id="@+id/nav_search"
+        android:icon="@drawable/search_icon_white"
+        android:title="@string/nav_search" />
+
+    <item
+        android:id="@+id/nav_filter"
+        android:icon="@drawable/filter_icon"
+        android:title="@string/nav_filters" />
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/profile_icon_white"
+        android:title="@string/nav_profile" />
+
+</menu>

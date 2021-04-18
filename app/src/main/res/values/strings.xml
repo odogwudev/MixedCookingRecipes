@@ -1,0 +1,99 @@
+<resources>
+    <string name="app_name">MixedCookingRecipes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Menu -->
+    <string name="nav_home">Home</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Login Activity -->
+    <string name="splash_app_name">MixedCookingRecipes</string>
+    <string name="login_screen_sub_txt">Welcome Back!</string>
+    <string name="login_screen_username_hint">Username</string>
+    <string name="login_screen_password_hint">Password</string>
+    <string name="login_screen_forgot_password">Forgot password?</string>
+
+    <string name="item_recipe_label">Recipe label</string>
+    <string name="profile_dummy_username">username</string>
+    <string name="profile_dummy_email">test@test.com</string>
+    <string name="my_favorites">My favorites</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+
+    <!-- Register Activity -->
+    <string name="register_screen_header">Create account</string>
+    <string name="register_screen_sub_txt">and start browsing recipes today!</string>
+    <string name="register_screen_username_hint">Username</string>
+    <string name="register_screen_email_hint">Email</string>
+    <string name="register_screen_password_hint">Password</string>
+    <string name="register_screen_conf_password_hint">Confirm Password</string>
+    <string name="register_btn_hint">Create Account</string>
+
+    <!-- Details Screen -->
+    <string name="recipe_kcal">kcal</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="protein">Protein</string>
+    <string name="_12g">12g</string>
+    <string name="carbs">Carbs</string>
+    <string name="fats">Fats</string>
+    <string name="cook_time">Cook Time: </string>
+    <string name="open_recipe">Open recipe</string>
+    <string name="chicken_with_soup">Chicken with soup</string>
+    <string name="cook_time_dummy">Cook Time: 1h 20 minutes</string>
+    <string name="nav_filters">Filters</string>
+    <string name="filter_screen_subtxt">Enter the data bellow and we\'ll find a recipe for you</string>
+    <string name="filter_screen_header">Find a recipe</string>
+    <string name="calories">Calories</string>
+    <string name="meal_type">Meal Type</string>
+    <string name="diet_type">Diet Type</string>
+    <string name="good_morning">Good Morning</string>
+    <string name="recipe_results_for">Recipe results for:</string>
+    <string name="meal_type_dummy">Meal Type : Mealtype</string>
+    <string name="diet_type_dummy">Diet Type : Balanced</string>
+    <string name="calorie_range_min_max_value">Calorie range : 350 up to 200 kcal</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="what_are_you_looking_to_cook_today">What are you looking to cook today?</string>
+
+    <!-- Filters Screen -->
+    <string-array name="meal_type_options">
+        <item>Breakfast</item>
+        <item>Snack</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+    </string-array>
+
+    <string-array name="diet_type_options">
+        <item>balanced</item>
+        <item>high-protein</item>
+        <item>high-fiber</item>
+        <item>low-fat</item>
+        <item>low-carb</item>
+        <item>low-sodium</item>
+    </string-array>
+
+    <string name="toast_fill_all_fields">Please fill all the fields</string>
+    <string name="food_categories">Food Categories</string>
+    <string name="no_favorites_found">No favorites found</string>
+    <string name="no_favorites_desc">Once you add a recipe as a favorite,\n it will show up here</string>
+    <string name="no_query_header">No recent queries found</string>
+    <string name="no_query_desc">Once you search something,\n it will show up here</string>
+    <string name="update_my_profile">Update my profile</string>
+    <string name="update_profile_btn">Update profile</string>
+    <string name="update_user_profile">Update User Profile</string>
+    <string name="skip">skip</string>
+    <string name="get_started_btn">Get Started</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="forgot_pass_main">Enter the email address \n associated with your account</string>
+    <string name="forgot_pass_desc">We will email you a link to reset your password.</string>
+    <string name="forgot_pass_btn">Send</string>
+
+    <string name="snackbar_no_results">No results found</string>
+    <string name="logout">Edit Profile</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="e_mail">Email Address</string>
+    <string name="username">Username</string>
+    <string name="save_btn">Save Now</string>
+
+</resources>

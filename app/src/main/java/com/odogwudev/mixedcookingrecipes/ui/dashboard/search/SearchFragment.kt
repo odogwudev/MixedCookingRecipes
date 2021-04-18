@@ -1,0 +1,87 @@
+package com.odogwudev.mixedcookingrecipes.ui.dashboard.search
+
+import android.content.Intent
+import android.util.Log
+import android.view.View
+import android.widget.Toast
+import androidx.appcompat.widget.SearchView
+import androidx.lifecycle.ViewModelProvider
+import com.odogwudev.mixedcookingrecipes.R
+import com.odogwudev.mixedcookingrecipes.abstraction.AbstractFragment
+import com.odogwudev.mixedcookingrecipes.listeners.QueryClickListener
+import com.odogwudev.mixedcookingrecipes.listeners.RecipeClickListener
+import com.odogwudev.mixedcookingrecipes.models.QueryModel
+import com.odogwudev.mixedcookingrecipes.models.RecipeMain
+import com.odogwudev.mixedcookingrecipes.ui.details.DetailsActivity
+import kotlinx.android.synthetic.main.fragment_search.*
+
+class SearchFragment : AbstractFragment(R.layout.fragment_search) {
+
+    private lateinit var viewModel: SearchViewModel
+
+    override fun init(view: View) {
+        viewModel = ViewModelProvider(this).get(SearchViewModel::class.java)
+    }
+
+    override fun running() {
+        viewModel.getRecentUserQueries()
+
+        search_searchbar.setOnClickListener {
+            search_searchbar.isIconified = false
+        }
+
+        search_searchbar.clearFocus()
+
+        search_searchbar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                search_searchbar.clearFocus()
+                search_searchbar.setQuery("", false)
+                Log.d("HELLO", query!!)
+
+                viewModel.addQueryToDb(QueryModel(query!!))
+                viewModel.clearCounters()
+                callApiForResuls(query)
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+        })
+
+        search_recycler.adapter = viewModel.adapter
+
+        viewModel.observeData(this, object : QueryClickListener {
+            override fun onQueryClick(query: QueryModel) {
+                callApiForResuls(query.queryName)
+            }
+        })
+    }
+
+    override fun stop() {
+        viewModel.removeObservers(this)
+    }
+
+    private fun callApiForResuls(query: String) {
+        viewModel.getDataFromRepository(query, object : RecipeClickListener {
+            override fun onRecipeClick(recipe: RecipeMain) {
+                startActivity(
+                    Intent(requireContext(), DetailsActivity::class.java)
+                        .putExtra("RECIPE", recipe)
+                )
+            }
+        })
+
+        observeDataPaging(query)
+    }
+
+    fun observeDataPaging(query: String) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            search_recycler.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+                if (!search_recycler.canScrollVertically(1)) {
+                    viewModel.loadMoreRecipes(query)
+                }
+            }
+        }
+    }
+}
